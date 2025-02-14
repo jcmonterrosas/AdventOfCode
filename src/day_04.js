@@ -1,3 +1,5 @@
+import md5 from 'md5';
+
 /**
  * Contains solutions for Day 4
  * Puzzle Description: https://adventofcode.com/2015/day/4
@@ -12,6 +14,14 @@
  */
 export const levelOne = ({ input, lines }) => {
   // your code here
+  let number = 0;
+  while (true) {
+    const hash = md5(input + number);
+    if (hash.startsWith('00000')) {
+      return number;
+    }
+    number++;
+  }
 };
 
 /**
@@ -23,4 +33,12 @@ export const levelOne = ({ input, lines }) => {
  */
 export const levelTwo = ({ input, lines }) => {
   // your code here
+  let number = 0;
+  while (true) {
+    const hash = md5(input + number);
+    if (hash.startsWith('000000')) {
+      return number;
+    }
+    number++;
+  }
 };
